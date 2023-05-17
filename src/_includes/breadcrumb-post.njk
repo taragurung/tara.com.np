@@ -1,0 +1,10 @@
+<nav id="breadcrumbs">
+<span class="archive--title">
+{%- if tags == "blogPosts" %}
+<a href="/blog/">Blog</a> »
+{%- endif -%}
+{%- if tag == "graphic-design-post" %} <span aria-current="page"><a href="/blog/{{ categorySlug }}">{{ categoryName }}</a> »</span>{% endif %}
+{%- if tag == "web-design-post" %} <span aria-current="page"><a href="/blog/web-design/">Web Design</a> »</span>{% endif %}
+{%- if tag == "web-development-post" %} <span aria-current="page"><a href="/blog/web-development/">Web Development</a> »</span>{% endif %}
+</span>
+</nav>
