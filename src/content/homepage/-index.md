@@ -11,20 +11,23 @@ banner:
 
 # Features
 features:
-  - title: "What's Included in Astroplate"
+  - title: "My Experience"
     image: "/images/service-1.png"
-    content: "Astroplate is a comprehensive starter template that includes everything you need to get started with your Astro project. What's Included in Astroplate"
+    content: "I have been working as DevOps engineer since 2017 (8 years). Working on wide varieties of companies from small startups to a big Corporates."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Astro and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "Design and Implement Entire Cloud Architecture"
+      - "Make application highly scalable, reliable and fault tolerant, implementing microservice architecture"
+      - "Containerize and deploy application on Kubernetes Cluster"
+      - "Write Terraform script to setup IAAC and set a single source of truth"
+      - "Setup a CICD pipeline using tools like Jenkins / Github Action "
+      - "Regular Security Scanning and Vulnerabilities Scanner Setup and apply fixex on Network, application"
+      - "OS Hardening / Application hardening setup"
+      - "AWS Cloud cost optimization"
+      - "Assist with Compliance (PCI-DSS / ISO )"
     button:
       enable: false
       label: "Get Started Now"
-      link: "#"
+      link: "/contact"
 
   - title: "Discover the Key Features Of Astro"
     image: "/images/service-2.png"
