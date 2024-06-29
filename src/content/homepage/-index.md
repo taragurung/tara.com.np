@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Tara Gurung, Senior DevOps Engineer"
+  title: "Tara Prasad Gurung, Senior DevOps Engineer"
   content: "Experienced DevOps Engineer Specializing in Streamlined Software Development, Automation, and Continuous Integration and Deployment/Delivery!"
   image: "/images/tara_banner.png"
   button:
@@ -23,6 +23,7 @@ features:
       - "Regular Security Scanning and Vulnerabilities Scanner Setup and apply fixex on Network, application"
       - "OS Hardening / Application hardening setup"
       - "AWS Cloud cost optimization"
+      - "Setup Logging and Monitoring"
       - "Assist with Compliance (PCI-DSS / ISO )"
     button:
       enable: false

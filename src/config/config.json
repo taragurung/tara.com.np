@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "DevOps Tara Prasad Gurung",
+    "title": "Tara Prasad Gurung | DevOps Engineer",
     "base_url": "https://tara.com.np",
     "base_path": "/",
     "trailing_slash": false,
@@ -9,7 +9,7 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "30",
-    "logo_text": "TG"
+    "logo_text": "Tara Prasad Gurung"
   },
 
   "settings": {
@@ -24,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Designed And Developed by Tara Prasad Gurung"
   },
 
   "navigation_button": {
@@ -40,8 +40,8 @@
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "Tara Prasad Gurung",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "Tara Prasad Gurung | Best DevOps Engineer"
   }
 }
