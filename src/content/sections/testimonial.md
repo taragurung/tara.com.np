@@ -1,27 +1,23 @@
 ---
 enable: true
-title: "What Users Are Saying About Astroplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Astroplate."
+title: "What my clients say"
+description: " Take a moment to read what business and agency owners say about my expertise and the experience they had while working with me."
 
 # Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Rohan Ale, AstraTech"
+    designation: "Engineering Manager"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "I met him over linkedin, since then he is providing the DevOps consulting to me. It's easy to work and communicate with him. He knows the best!"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Remco Schoos"
+    designation: "CTO, CIO en Chief AI Officer @ Group Moovs"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "I have worked with Tara Prasad Gurung on multiple projects, he delivers as required!"
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Janam"
+    designation: "DevOps Engineer, CloudHero"
     avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+    content: "We were colleagues for 3years in same organization, Tara is great he will understands the problem and always focuses on end result."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
 ---
