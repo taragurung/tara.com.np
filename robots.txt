@@ -1,9 +1,0 @@
-# yoursite.com/robots.txt
-User-agent: googlebot
-
-Sitemap: https://yoursite.com/sitemap.xml
-
-User-agent: *
-Disallow: /template/
-
-Disallow: /template/
