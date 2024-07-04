@@ -1,12 +1,12 @@
 ---
-title: "How to build an Application with modern Technology"
-meta_title: ""
-description: "this is meta description"
-date: 2022-04-04T05:00:00Z
+title: "Getting familiar with AWS Private and Public Subnet with real-time projec (bastion host)"
+meta_title: "Beginners guide to AWS Private and Public network with realtime practical examples."
+description: "Beginners guide to AWS Private and Public network, how to access private network content with bastion host, learning with example"
+date: 2023-04-04T05:00:00Z
 image: "/images/image-placeholder.png"
 categories: ["AWS", "DevOps"]
 author: "Tara Prasad Gurung"
-tags: ["networking","bastion-host"]
+tags: ["networking","bastion-host","private-subnet","public-subnet"]
 draft: false
 ---
 
