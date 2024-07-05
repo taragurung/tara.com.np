@@ -1,7 +1,7 @@
 ---
 # Banner
 banner:
-  title: "Tara Prasad Gurung, Senior DevOps Engineer"
+  title: "Tara Gurung, Senior DevOps Engineer"
   content: "Experienced DevOps Engineer Specializing in Streamlined Software Development, Automation, and Continuous Integration and Deployment/Delivery!"
   image: "/images/tara_banner.png"
   button:
