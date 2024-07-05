@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Tara Prasad Gurung | DevOps Engineer",
+    "title": "Tara Gurung | DevOps Engineer",
     "base_url": "https://tara.com.np",
     "base_path": "/",
     "trailing_slash": false,
@@ -9,13 +9,13 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "30",
-    "logo_text": "Tara Prasad Gurung"
+    "logo_text": "Tara Gurung"
   },
 
   "settings": {
     "search": true,
     "sticky_header": true,
-    "theme_switcher": true,
+    "theme_switcher": false,
     "default_theme": "system",
     "pagination": 2,
     "summary_length": 200,
@@ -28,7 +28,7 @@
   },
 
   "navigation_button": {
-    "enable": true,
+    "enable": false,
     "label": "Get Started",
     "link": "https://github.com/zeon-studio/astroplate"
   },
