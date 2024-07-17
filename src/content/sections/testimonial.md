@@ -15,7 +15,7 @@ testimonials:
     avatar: "/images/avatar-sm.png"
     content: "I have worked with Tara Prasad Gurung on multiple projects, he delivers as required!"
 
-  - name: "Janam"
+  - name: "Janam Khada"
     designation: "DevOps Engineer, CloudHero"
     avatar: "/images/avatar-sm.png"
     content: "We were colleagues for 3years in same organization, Tara is great he will understands the problem and always focuses on end result."
