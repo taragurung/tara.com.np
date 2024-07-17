@@ -12,7 +12,7 @@ banner:
 # Features
 features:
   - title: "My Experience"
-    image: "/images/service-1.png"
+    image: "/images/tara_prasad_gurung_work_experience.png"
     content: "I have been working as DevOps engineer since 2017 (8 years). Working on wide varieties of companies from small startups to a big Corporates."
     bulletpoints:
       - "Design and Implement Entire Cloud Architecture"
@@ -31,7 +31,7 @@ features:
       link: "/contact"
 
   - title: "Why choose Tara Prasad Gurung"
-    image: "/images/service-2.png"
+    image: "/images/tools_tara_gurung_use_as_devops.png"
     content: "I have been in IT industry since 2013, I value the pain customer has to go through when a system or application fails, I am sincere to what I do and my 8years of DevOps adds extra value to your work."
     bulletpoints:
       - "I am good listener first, and good at collaborating with Developers which is a must needed soft skills."
@@ -43,7 +43,7 @@ features:
       link: "https://github.com/zeon-studio/astroplate"
 
   - title: "Tools and Services I use mostly"
-    image: "/images/service-3.png"
+    image: "/images/tools_tara_gurung_use_as_devops.png"
     content: "DevOps is not just knowing the tools but using the right tools that can add values.These are few of the tools and services I am experienced with."
     bulletpoints:
       - "AWS Cloud Service, Google Cloud Provider(GCP)"
