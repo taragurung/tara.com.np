@@ -30,28 +30,15 @@ features:
       label: "Get Started Now"
       link: "/contact"
 
-  - title: "Discover the Key Features Of Astro"
+  - title: "Why choose to work with Tara Prasad Gurung"
     image: "/images/service-2.png"
-    content: "Astro is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "I have been in IT industry since 2013, I value the pain customer has to go through when a system or application fails, I am sincere to what I do and my 8years of DevOps adds extra value to your work."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
-    button:
-      enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/astroplate"
-
-  - title: "The Top Reasons to Choose Astro for Your Next Project"
-    image: "/images/service-3.png"
-    content: "With Astro, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Astro a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "I am good listener first, and good at collaborating with Developers which we have to do alot."
+      - "I have a real working experience with right tools and services."
+      - "Good fixing issues and consulting with better and secure solutions."
     button:
       enable: false
-      label: ""
-      link: ""
+      label: "Get Started Now"
+
 ---
