@@ -37,7 +37,7 @@ features:
       - "Years of DevOps consulting experience."
       - "I am good listener first, and good at collaborating with Developers which is a must needed soft skills."
       - "I have a real working experience with right tools and services."
-      - "Good at fixing issues
+      - "Good at fixing issues"
     button:
       enable: false
       label: "Get Started Now"
