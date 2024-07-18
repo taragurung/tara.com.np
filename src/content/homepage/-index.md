@@ -31,12 +31,13 @@ features:
       link: "/contact"
 
   - title: "Why choose Tara Prasad Gurung"
-    image: "/images/tools_tara_gurung_use_as_devops.png"
+    image: "/images/why_devops_with_tara_prasad_gurung.png"
     content: "I have been in IT industry since 2013, I value the pain customer has to go through when a system or application fails, I am sincere to what I do and my 8years of DevOps adds extra value to your work."
     bulletpoints:
+      - "Years of DevOps consulting experience."
       - "I am good listener first, and good at collaborating with Developers which is a must needed soft skills."
       - "I have a real working experience with right tools and services."
-      - "Good fixing issues and consulting with better and secure solutions."
+      - "Good at fixing issues
     button:
       enable: false
       label: "Get Started Now"
