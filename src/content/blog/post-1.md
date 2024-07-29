@@ -7,7 +7,7 @@ image: "/images/image-placeholder.png"
 categories: ["AWS", "DevOps"]
 author: "Tara Prasad Gurung"
 tags: ["networking","bastion-host","private-subnet","public-subnet"]
-draft: false
+draft: true
 ---
 
 Nemo vel ad consectetur namut rutrum ex, venenatis sollicitudin urna. Aliquam erat volutpat. Integer eu ipsum sem. Ut bibendum lacus vestibulum maximus suscipit. Quisque vitae nibh iaculis neque blandit euismod.
