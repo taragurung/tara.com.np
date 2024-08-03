@@ -10,7 +10,7 @@ tags: ["uptime-kuma", "uptime-kume teams-alert","healcheck and monitoring"]
 draft: false
 ---
 
-I have been this situation a lot. The services we set up went down for some reason and we are not aware of it. The customer knows about it the first and let us know. This is one of the worst situation to be in. All the services that we setup should be under our control or we should be the one to know about it or we should know about the failure as soon as things goes wrong. 
+I have been in this situation a lot. The services we set up went down for some reason and we are not aware of it. The customer knows about it the first and let us know. This is one of the worst situation to be in. All the services that we setup should be under our control or we should be the one to know about it or we should know about the failure as soon as things goes wrong. 
 
 The application we deploy might go wrong any time and it's possible that we are not aware of it. To bring us all out of this worst situation we need to setup a monitoring tools that will continuously monitor our sytem or appliation and let us know as soon as something goes wrong.
 
@@ -100,8 +100,9 @@ The way we used to setup webhook in microsoft teams is deprecated now, so we do 
 ![Alt text](public/images/teams-workflow-webhookreqest-received.PNG)
 
 Do the necessary settings as requested like setting up flow-name, choosing the channel name and many more. 
-> We get a webhook url , put it safe which we would need and thats where all the post request will be done for notifications. 
+> We get a webhook url as shown in image , put it safe which we would need and thats where all the post request will be done for notifications. 
 
+![Alt text](public/images/webhook-url-generated.PNG)
 
 ## Finally configuring the uptime kuma setting up monitor and notification:
 - add the new monitor in uptime kuma
