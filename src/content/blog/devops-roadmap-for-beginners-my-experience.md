@@ -10,12 +10,12 @@ tags: ["devops", "devops-roadmap","devops-beginners-guide"]
 draft: false
 ---
 
-In this blog, I just want to put my experience of how someone can be a DevOps Engineer. This is not like a 30 day tutorial or resources to make you a DevOps in X number of days but a guide for beginners based on my experience. Learning is a continuous process and if done the right way can make your journey better. 
+In this blog, I want to share my experience of how someone can become a DevOps Engineer. This is not a 30-day tutorial or a set of resources to make you a DevOps Engineer in a specific number of days, but rather a guide for beginners based on my experience. Learning is a continuous process, and if done the right way, it can make your journey better.
 
-I was a Developer turned DevOps Engineer so the beginning was not easy for me. I was working as a Python programmer in a hosting company which was also automating processes and practicing DevOps. That is how my journey began. These were a few of the things that I had to struggle with:
+I was a Developer turned DevOps Engineer, so the beginning was not easy for me. I was working as a Python programmer in a hosting company that was also automating processes and practicing DevOps. That is how my journey began. Here are a few of the things I struggled with:
 
-- Not all but most of the Developers are not familiar with network stuff so it was a big hurdle for me in my DevOps journey. So I started reading and practicing it a lot. Also I did a CCNA training which helped me a lot to get to know networking concepts.
-- I was a windows operating system user which was another problem for me because most of the systems I had to work with were Linux Operating System and I was not familiar with linux commands. So the next challenge for me was learning and excelling at linux operating systems. 
+- Not all, but most Developers are not familiar with networking, so it was a big hurdle for me in my DevOps journey. I started reading and practicing it a lot. I also did CCNA training, which helped me greatly to understand networking concepts.
+- I was a Windows operating system user, which was another problem because most of the systems I had to work with were Linux, and I was not familiar with Linux commands. The next challenge for me was learning and excelling at Linux operating systems.
 
 > Knowing Networking and Linux is must.
 
@@ -23,7 +23,7 @@ I was a Developer turned DevOps Engineer so the beginning was not easy for me. I
 ## Things I learned on my Devops journey:
 
 ### Learn the basic ideology behind: 
-Get familiar with the DevOps concepts and how it helps an organization that follows the DevOps principles. Getting to know the fundamental idea behind DevOps helps a lot. Devops is not just about learning the tools and doing automation, it's a culture and mindset that can bring changes, tools are just the pillars to help. Over time beginners will understand this concept as well so no panic. 
+Get familiar with DevOps concepts and how they help an organization that follows DevOps principles. Understanding the fundamental idea behind DevOps is very beneficial. DevOps is not just about learning the tools and doing automation; it's a culture and mindset that can bring about significant changes. Tools are just the pillars that support this culture. Over time, beginners will understand this concept as well, so there's no need to panic.
 
 ### Linux and Networking in must:
 As stated before without this your DevOps journey is going to get harder. I am still learning it.
