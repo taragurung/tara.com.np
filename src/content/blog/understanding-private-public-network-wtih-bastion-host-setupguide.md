@@ -23,7 +23,7 @@ In this tutorial, we will cover everything from setting up the machine in a priv
 Note: These days all these setup can be automated while creating a VPC.
 
 ## how it works:
-![Alt text](private-public-network-guide-with-real-project-example-bastion-setup.jpg)
+![Alt text](public/images/private-public-network-guide-with-real-project-example-bastion-setup.jpg)
 
 As you can see in the image, when we run a service in a private network, it is not possible to access it publicly. However, when we have an OpenVPN setup completed and are connected to the VPN, we can connect to the service in the private network using its private IP as well.
 
