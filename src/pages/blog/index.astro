@@ -43,19 +43,23 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
               ))
             }
           </div>
-          <Pagination
+	  <Pagination
             section={BLOG_FOLDER}
             currentPage={1}
             totalPages={totalPages}
           />
         </div>
 
-        <!-- sidebar -->
+	<!-- sidebar -->
+ 
         <PostSidebar
           categories={categories}
           tags={tags}
           allCategories={allCategories}
-        />
+	/>
+         <iframe src="https://embeds.beehiiv.com/3f085aa1-723f-49fe-ac8e-b4b8762395ca" data-test-id="beehiiv-embed" width="480" height="320" frameborder="0" scrolling="no" style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;"></iframe>
+
+
       </div>
     </div>
   </section>
