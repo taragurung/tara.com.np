@@ -25,7 +25,8 @@ The choice is yours which one you prefer. It also depends on the budget you have
 ## Why uptime kuma?
 - I find it way easier to setup then any other tools available
 - The configuration part is pretty easy and has many options available.
-- It's opensource
+- It's opensource.
+- The best part is it provides a monthly SLA report for the service being monitored.
 
 ## Our Goal 
 - We will setup uptime kuma using helm chart
