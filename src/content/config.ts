@@ -1,57 +1,44 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
-// Post collection schema
-const blogCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    date: z.date().optional(),
-    image: z.string().optional(),
-    author: z.string().default("Admin"),
-    categories: z.array(z.string()).default(["others"]),
-    tags: z.array(z.string()).default(["others"]),
-    draft: z.boolean().optional(),
-  }),
+const seoSchema = z.object({
+    title: z.string().min(5).max(120).optional(),
+    description: z.string().min(15).max(160).optional(),
+    image: z
+        .object({
+            src: z.string(),
+            alt: z.string().optional()
+        })
+        .optional(),
+    pageType: z.enum(['website', 'article']).default('website')
 });
 
-// Author collection schema
-const authorsCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    email: z.string().optional(),
-    image: z.string().optional(),
-    description: z.string().optional(),
-    social: z
-      .array(
-        z
-          .object({
-            name: z.string().optional(),
-            icon: z.string().optional(),
-            link: z.string().optional(),
-          })
-          .optional(),
-      )
-      .optional(),
-    draft: z.boolean().optional(),
-  }),
+const blog = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        excerpt: z.string().optional(),
+        publishDate: z.coerce.date(),
+        updatedDate: z.coerce.date().optional(),
+        isFeatured: z.boolean().default(false),
+        tags: z.array(z.string()).default([]),
+        seo: seoSchema.optional()
+    })
 });
 
-// Pages collection schema
-const pagesCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    image: z.string().optional(),
-    draft: z.boolean().optional(),
-  }),
+const pages = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        seo: seoSchema.optional()
+    })
 });
 
-// Export collections
-export const collections = {
-  blog: blogCollection,
-  authors: authorsCollection,
-  pages: pagesCollection,
-};
+const projects = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        publishDate: z.coerce.date(),
+        isFeatured: z.boolean().default(false),
+        seo: seoSchema.optional()
+    })
+});
+
+export const collections = { blog, pages, projects };
