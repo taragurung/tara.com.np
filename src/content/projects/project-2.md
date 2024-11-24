@@ -22,7 +22,7 @@ Determined to change that, I connected on LinkedIn with someone(Surendra Tamang)
 3. Make it a network platform for tech enthusiast.
 
 ## Event updates:
-- so fare conudcated 17th meetups
-- Started with 2 people now we have 7 dedicated people in the team to volunteer and make the event happen evey month.
+- Successfully conducted 17th meetups and continuing
+- Initiated with 2 people now we have 7 dedicated people in the team to volunteer and make the event happen evey month.
 
 
