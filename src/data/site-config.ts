@@ -39,7 +39,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     title: 'Tara Gurung',
-    subtitle: 'Software Engineer | DevOps Engineer | Love following best practices',
+    subtitle: 'Software Engineer | DevOps Engineer ',
     description: 'Experienced Software Engineer with 12 years in diverse technology companies. DevOps Engineer based in Nepal.',
     image: {
         src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
@@ -78,10 +78,6 @@ const siteConfig: SiteConfig = {
             text: 'Linkedin',
             href: 'https://linkedin.com/in/taragurung/'
         },
-        {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
-        }
     ],
     hero: {
         title: 'Hi & Welcome to DevOps world!',
