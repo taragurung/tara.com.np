@@ -22,11 +22,15 @@ Follow these steps to install Oracle JDK on a Linux server:
 **Step 1: Download the JDK**
 Visit the official Oracle JDK downloads page and get the required JDK version. Alternatively, use the following command to download it directly:
 
-```wget https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb```
+```
+wget https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb
+```
 
 **Step 2: Install the Downloaded JDK**
 Run the following command to install the downloaded JDK:
-```sudo apt install ./jdk-23_linux-x64_bin.deb -y```
+```
+sudo apt install ./jdk-23_linux-x64_bin.deb -y
+```
 
 **Step 3: Update the Environment File**
 Edit the environment file at /etc/environment and add the following lines to set up the Java environment variables:
