@@ -3,8 +3,8 @@ title: Running multiple jdk version in same server
 excerpt: Sometime we would need to run multiple jdk version on same machine, this is the guide on how to do it on linux ubuntu24.04 machine. Tested works.
 publishDate: 'Jan 09 2025'
 tags:
-  - javajdk
-  - tips
+  - linux
+  - tips-and-tricks
 seo:
   image:
     src: '/private-public-network-guide-with-real-project-example-bastion-setup.PNG'
@@ -23,6 +23,7 @@ Follow these steps to install Oracle JDK on a Linux server:
 Visit the official Oracle JDK downloads page and get the required JDK version. Alternatively, use the following command to download it directly:
 
 ```wget https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.deb```
+
 **Step 2: Install the Downloaded JDK**
 Run the following command to install the downloaded JDK:
 ```sudo apt install ./jdk-23_linux-x64_bin.deb -y```
@@ -46,13 +47,13 @@ After completing these steps, the JAVA_HOME variable will point to JDK version 2
 ## How to Install and Configure Multiple Oracle JDK Versions
 If you need to install another version of Oracle JDK without removing the existing one, follow these steps:
 
-Download the desired JDK version (repeat Step 1 above with the link for the new version).
-Install the new JDK (repeat Step 2 above).
-Update the environment variables (repeat Step 3, replacing JAVA_HOME with the path to the new JDK version).
-Apply the changes (repeat Step 4).
-You can repeat these steps to install and configure as many JDK versions as you need.
+- Download the desired JDK version (repeat Step 1 above with the link for the new version).
+- Install the new JDK (repeat Step 2 above).
+- Update the environment variables (repeat Step 3, replacing JAVA_HOME with the path to the new JDK version).
+- Apply the changes (repeat Step 4).
+**You can repeat these steps to install and configure as many JDK versions as you need.**
 
-How to Switch Between JDK Versions
+### How to Switch Between JDK Versions, final steps
 Once multiple JDK versions are installed, you can switch between them using the update-alternatives command. Here’s how:
 
 ```
