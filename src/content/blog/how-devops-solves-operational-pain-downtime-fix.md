@@ -7,8 +7,8 @@ tags:
   - devops
 seo:
   image:
-    src: '/private-public-network-guide-with-real-project-example-bastion-setup.PNG'
-    alt: From Downtime to Uptime How DevOps Solves Operational Pain Points
+    src: '/devops-downtime-to-uptime-operational-excellence.png'
+    alt: From Downtime to Uptime How DevOps Solves Operational Pain Points for operational excellency
 ---
 
 ## Introduction
