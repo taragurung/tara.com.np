@@ -1,7 +1,7 @@
 ---
 title: Securing CI/CD Pipelines A Comprehensive Guide
-excerpt:  This are few reasons and how I would monitor your system and application as a DevOps engineer in 2025.
-publishDate: 'Feb 06 2025'
+excerpt:  Modern software development relies on CI/CD pipelines to automate building, testing, and deploying applications. However, without proper security measures, these pipelines can become a major target for cyber threats
+publishDate: 'Feb 16 2025'
 tags:
   - devops-engineer
   - devops
