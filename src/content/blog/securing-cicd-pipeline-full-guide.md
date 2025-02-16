@@ -1,5 +1,5 @@
 ---
-title: Securing CI/CD Pipelines: A Comprehensive Guide
+title: Securing CI/CD Pipelines A Comprehensive Guide
 excerpt:  This are few reasons and how I would monitor your system and application as a DevOps engineer in 2025.
 publishDate: 'Feb 06 2025'
 tags:
