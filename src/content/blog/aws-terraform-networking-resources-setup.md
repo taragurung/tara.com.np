@@ -1,5 +1,5 @@
 ---
-title: Creating the AWS Network resource required for all project using Terraform Part-1
+title: Creating AWS Network resources using Terraform Part-1
 excerpt:  Every application we build requires a networking component like VPC in AWS which is the foundation for every project. Here we will learn how to create those with Terraform.
 publishDate: 'May 05 2025'
 tags:
