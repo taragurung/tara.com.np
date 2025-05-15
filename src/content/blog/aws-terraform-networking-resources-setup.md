@@ -188,6 +188,7 @@ vpc_cidr     = "17.0.0.0/16"
 Use this commands to check resources that will be created by terraform. Once everthing looks good, use terraform apply command.
 
 ```
+terraform init
 terraform plan -var-file=prod.tfvars
 terraform apply -var-file=prod.tfvars
 ```
