@@ -152,16 +152,44 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"post-1.md": {
-	id: "post-1.md";
-  slug: "post-1";
+"aws-terraform-networking-resources-setup.md": {
+	id: "aws-terraform-networking-resources-setup.md";
+  slug: "aws-terraform-networking-resources-setup";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"post-2.md": {
-	id: "post-2.md";
-  slug: "post-2";
+"devops-roadmap-for-beginners-my-experience.md": {
+	id: "devops-roadmap-for-beginners-my-experience.md";
+  slug: "devops-roadmap-for-beginners-my-experience";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"health-check-and-monitoring-with-uptime-kuma-kubernetes-setup-guide.md": {
+	id: "health-check-and-monitoring-with-uptime-kuma-kubernetes-setup-guide.md";
+  slug: "health-check-and-monitoring-with-uptime-kuma-kubernetes-setup-guide";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"hidden-roi-of-hiring-experienced-devops-engineer.md": {
+	id: "hidden-roi-of-hiring-experienced-devops-engineer.md";
+  slug: "hidden-roi-of-hiring-experienced-devops-engineer";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"how-devops-solves-operational-pain-downtime-fix.md": {
+	id: "how-devops-solves-operational-pain-downtime-fix.md";
+  slug: "how-devops-solves-operational-pain-downtime-fix";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"monitoring-your-application-in-2025-from-devops.md": {
+	id: "monitoring-your-application-in-2025-from-devops.md";
+  slug: "monitoring-your-application-in-2025-from-devops";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -169,6 +197,20 @@ declare module 'astro:content' {
 "post-3.md": {
 	id: "post-3.md";
   slug: "post-3";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"running-multiple-jdk-version-same-server.md": {
+	id: "running-multiple-jdk-version-same-server.md";
+  slug: "running-multiple-jdk-version-same-server";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"securing-cicd-pipeline-full-guide.md": {
+	id: "securing-cicd-pipeline-full-guide.md";
+  slug: "securing-cicd-pipeline-full-guide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
