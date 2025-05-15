@@ -19,7 +19,12 @@ This Terraform setup provides the foundational networking components for any AWS
 - Security Groups
 - Modular design to promote reusability and environment-specific configurations
 
-## folder structure maintaine for terraform scripts
+## Script repository
+Code repository: https://github.com/taragurung/terraform-guide-aws-network.git
+
+
+## folder structure maintained for terraform scripts
+![terraform script folder structure](https://i.ibb.co/gMxhYBKF/Screenshot-2025-05-15-at-11-57-31-AM.png)
 
 ## Step-1 Creating the VPC network with terraform:
 A Virtual Private Cloud (VPC) is the foundational building block for networking in AWS. It logically isolates your AWS resources (e.g., EC2, RDS) and allows you to define IP ranges, subnets, routing, and security.
