@@ -21,18 +21,6 @@ This Terraform setup provides the foundational networking components for any AWS
 
 ## folder structure maintaine for terraform scripts
 
-├── main.tf                 # Root Terraform entry point
-├── modules/
-│   └── vpc/
-│       ├── gateway.tf      # Internet Gateway
-│       ├── main.tf         # VPC creation
-│       ├── routetable.tf   # Route Table and associations
-│       ├── subnets.tf      # Public and Private subnets
-│       └── variables.tf    # Module variables
-├── readme.md               # Documentation
-├── prod.tfvars             # Environment-specific variables
-└── variables.tf            # Root variables
-
 ## Step-1 Creating the VPC network with terraform:
 A Virtual Private Cloud (VPC) is the foundational building block for networking in AWS. It logically isolates your AWS resources (e.g., EC2, RDS) and allows you to define IP ranges, subnets, routing, and security.
 
