@@ -84,7 +84,7 @@ const siteConfig: SiteConfig = {
         text: "I'm Tara Gurung, I do DevOps for my customers to bring change in their software engineering process. I am driven by a passion for automation, scalability, and seamless collaboration. My approach combines strategic intuition, thoughtful research, and a focus on efficiency to build resilient infrastructure and optimize workflows. I have a deep appreciation for cutting-edge technologies, robust software design, and the transformative power of DevOps culture. Connect with me on <a href='https://linkedin.com/in/taragurung'>Linkedin</a>.",
         image: {
             src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
-            alt: 'Tara Gurung Profile Picture while leading a meetup session in Pokhara'
+            alt: 'Tara Gurung DevOps engineer profile pic'
         },
         actions: [
             {
@@ -92,11 +92,6 @@ const siteConfig: SiteConfig = {
                 href: '/contact'
             }
         ]
-    },
-    subscribe: {
-        title: 'Subscribe to Tara Gurung Newsletter',
-        text: 'All the latest posts directly in your inbox.',
-        formUrl: '#'
     },
     postsPerPage: 8,
     projectsPerPage: 8
