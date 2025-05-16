@@ -199,6 +199,6 @@ terraform apply -var-file=prod.tfvars
 ```
 
 ### NEXT STEP, In Part-II 
-- Extend support for NAT Gateways (for private subnet internet access).
+- Extend support for NAT Gateways (for private subnet internet access). [PART-2 here](https://tara.com.np/blog/creating-aws-network-component-nat-part2/)
 
 
