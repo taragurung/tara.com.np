@@ -40,7 +40,7 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
     title: 'Tara Gurung',
     subtitle: 'DevOps Engineer @ Jyaba ',
-    description: 'Experienced Software Engineer and DevOps Engineer with 12 years of hands-on experience in diverse technology companies. Proficient in designing and maintaining scalable infrastructure using tools and platforms such as Docker, Kubernetes, Jenkins, Terraform, and AWS. Strong background in CI/CD automation, cloud-native application deployment, and system reliability engineering..',
+    description: 'I help teams solve software engineering challenges by automating processes, improving scalability, and making collaboration seamless—so everything runs smoother and everyone’s happier. I do this through smart planning, efficient systems, and a focus on what works. I am a DevOps engineer.',
     image: {
         src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
         alt: 'DevOps Engineer in Pokhara, Nepal'
