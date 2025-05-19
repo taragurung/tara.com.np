@@ -39,6 +39,32 @@ function formatDate(dateValue) {
     return '';
   }
 }
+
+
+// Mock data for community talks - replace with your actual data source
+const communityTalks = [
+  {
+    id: 1,
+    title: "DevOps For Cultural Shift | WordCamp Pokhara",
+    image: "/my-community-talk-2025-wordcamp.png",
+    link: "https://pokhara.wordcamp.org/2025/speaker/tara-prasad-gurung/",
+    date: "2025-06-14"
+  },
+  {
+    id: 2,
+    title: "From community to DevOps &  Data engineering | DevOps Connect",
+    image: "/my-community-talk-2025-devopsconnect.jpeg",
+    link: "https://connect.devopskathmandu.com/speakers/tara-prasad-gurung-90cf2b85-5a41-4b75-9144-fe69ccb3cc0a/",
+    date: "2025-04-19"
+  },
+  {
+    id: 3,
+    title: "DevOps for Beginners | AWS USER GROUP WIT Nepal ",
+    image: "/my-community-talk-2025-aws-user-group.png",
+    link: "https://www.linkedin.com/posts/aws-user-group-women-in-tech-nepal_awswomenintech-pokhara-womenincloud-activity-7298312523081027584-n7bD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA1YINQBjD50ictUTGDqKQozeGo1w58huSk",
+    date: "2025-02-16"
+  }
+];
 ---
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
@@ -69,6 +95,55 @@ function formatDate(dateValue) {
             </div>
         )
     }
+
+    <!-- talks -->
+    <!-- Community Talks Section -->
+    <div class="mb-16 sm:mb-24">
+        <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Community Talks</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {communityTalks.map((talk) => (
+                <div class="bg-secondary dark:bg-secondary rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <a href={talk.link} target="_blank" rel="noopener noreferrer">
+                        <img 
+                            src={talk.image} 
+                            alt={talk.title} 
+                            class="w-full h-50 object-cover"
+                        />
+                    </a>
+                    <div class="p-4">
+                        <p class="text-sm text-muted-foreground mb-2">
+                            {formatDate(talk.date)}
+                        </p>
+                        <a href={talk.link} target="_blank" rel="noopener noreferrer" class="hover:underline">
+                            <h3 class="text-xl font-semibold mb-2">{talk.title}</h3>
+                        </a>
+                        <a 
+                            href={talk.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-block text-primary hover:text-primary-foreground font-medium"
+                        >
+                            View talk →
+                        </a>
+                    </div>
+                </div>
+            ))}
+        </div>
+        <!-- Uncomment and modify if you want a "View All Talks" button
+        <div class="mt-12 sm:mt-16">
+            <Button href="/talks">View All Talks</Button>
+        </div>
+        -->
+    </div>
+    <!-- // -->
+
+
+
+
+
+
+
+
     
     <!-- Latest Blog Posts Section -->
     <div class="mb-16 sm:mb-24">
