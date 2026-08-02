@@ -13,6 +13,7 @@ export type Hero = {
     title?: string;
     text?: string;
     image?: Image;
+    images?: Image[];
     actions?: Link[];
 };
 
@@ -40,7 +41,7 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     title: 'Tara Gurung',
-    subtitle: 'DevOps Engineer @ Jyaba ',
+    subtitle: 'Co-Founder & CEO @ Jyaba — DevOps Engineer, Building Scalable Data Solutions',
     description: 'I help teams solve software engineering challenges by automating processes, improving scalability, and making collaboration seamless—so everything runs smoother and everyone’s happier. I do this through smart planning, efficient systems, and a focus on what works. I am a DevOps engineer.',
     image: {
         src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
@@ -81,12 +82,24 @@ const siteConfig: SiteConfig = {
         },
     ],
     hero: {
-        title: 'DevOps Engineer | Data Engineering Practitioner',
-        text: "I'm Tara Gurung, I do DevOps for my customers to bring change in their software engineering process. I am driven by a passion for automation, scalability, and seamless collaboration. My approach combines strategic intuition, thoughtful research, and a focus on efficiency to build resilient infrastructure and optimize workflows. I have a deep appreciation for cutting-edge technologies, robust software design, and the transformative power of DevOps culture. Connect with me on <a href='https://linkedin.com/in/taragurung'>Linkedin</a>.",
+        title: 'Co-Founder, CEO @ Jyaba | DevOps Engineer | Building Scalable Data Solutions',
+        text: "I'm Tara Gurung. I started out as a software developer, and once I discovered DevOps, I never looked back. Over the years I've worked across infrastructure automation, CI/CD pipelines, cloud networking, and observability. Getting involved in Nepal's tech community turned out to be one of the best decisions I made: it's where I met my co-founder, and together we built Jyaba from scratch, where I now lead DevOps and data engineering work that helps teams ship faster and scale with confidence. I care as much about the culture side of DevOps as the tooling: breaking down silos, building ownership, and helping teams collaborate better. It was a humble beginning: just the four of us figuring things out together. In 2026, that team has grown to 15 people, and we're still building. Connect with me on [Linkedin](https://linkedin.com/in/taragurung).",
         image: {
             src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
             alt: 'Tara Gurung DevOps engineer profile pic'
         },
+        images: [
+            {
+                src: '/jyaba-team-early-days.png',
+                alt: 'Jyaba founding team of four in the early days',
+                caption: 'The early days — just the four of us'
+            },
+            {
+                src: '/jyaba-team-2026.png',
+                alt: 'Jyaba team of fifteen in 2026',
+                caption: 'Jyaba today — 15 people strong in 2026'
+            }
+        ],
         actions: [
             {
                 text: 'Get in Touch',
