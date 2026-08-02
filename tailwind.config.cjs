@@ -10,14 +10,18 @@ module.exports = {
         },
         extend: {
             textColor: {
-                main: 'rgb(var(--color-text-main) / <alpha-value>)'
+                main: 'rgb(var(--color-text-main) / <alpha-value>)',
+                accent: 'rgb(var(--color-accent) / <alpha-value>)',
+                'accent-foreground': 'rgb(var(--color-accent-foreground) / <alpha-value>)'
             },
             backgroundColor: {
                 main: 'rgb(var(--color-bg-main) / <alpha-value>)',
-                muted: 'rgb(var(--color-bg-muted) / <alpha-value>)'
+                muted: 'rgb(var(--color-bg-muted) / <alpha-value>)',
+                accent: 'rgb(var(--color-accent) / <alpha-value>)'
             },
             borderColor: {
-                main: 'rgb(var(--color-border-main) / <alpha-value>)'
+                main: 'rgb(var(--color-border-main) / <alpha-value>)',
+                accent: 'rgb(var(--color-accent) / <alpha-value>)'
             },
             typography: (theme) => ({
                 dante: {
@@ -25,7 +29,7 @@ module.exports = {
                         '--tw-prose-body': theme('textColor.main / 100%'),
                         '--tw-prose-headings': theme('textColor.main / 100%'),
                         '--tw-prose-lead': theme('textColor.main / 100%'),
-                        '--tw-prose-links': theme('textColor.main / 100%'),
+                        '--tw-prose-links': theme('textColor.accent / 100%'),
                         '--tw-prose-bold': theme('textColor.main / 100%'),
                         '--tw-prose-counters': theme('textColor.main / 100%'),
                         '--tw-prose-bullets': theme('textColor.main / 100%'),
@@ -43,13 +47,14 @@ module.exports = {
                 DEFAULT: {
                     css: {
                         a: {
-                            fontWeight: 'normal',
+                            color: theme('textColor.accent / 100%'),
+                            fontWeight: '500',
                             textDecoration: 'underline',
-                            textDecorationStyle: 'dashed',
+                            textDecorationStyle: 'solid',
                             textDecorationThickness: '1px',
                             textUnderlineOffset: '2px',
                             '&:hover': {
-                                textDecorationStyle: 'solid'
+                                textDecorationThickness: '2px'
                             }
                         },
                         'h1,h2,h3,h4,h5,h6': {
