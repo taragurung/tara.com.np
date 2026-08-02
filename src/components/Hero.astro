@@ -17,6 +17,18 @@ const hero = siteConfig.hero;
                 </figure>
             )}
             {hero.text && <div class="max-w-none prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />}
+            {hero.images && hero.images.length > 0 && (
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    {hero.images.map((img) => (
+                        <figure>
+                            <div class="aspect-video w-full overflow-hidden rounded-xl border border-main/10">
+                                <img class="h-full w-full object-cover" src={img.src} loading="lazy" decoding="async" alt={img.alt || ''} />
+                            </div>
+                            {img.caption && <figcaption class="mt-2 text-xs opacity-70 sm:text-sm">{img.caption}</figcaption>}
+                        </figure>
+                    ))}
+                </div>
+            )}
             {hero.actions && hero.actions.length > 0 && (
                 <div class="flex flex-wrap gap-4">
                     {hero.actions.map((action) => (
