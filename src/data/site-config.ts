@@ -92,12 +92,12 @@ const siteConfig: SiteConfig = {
             {
                 src: '/jyaba-team-early-days.png',
                 alt: 'Jyaba founding team of four in the early days',
-                caption: 'The early days — just the four of us'
+                caption: 'The early days — started with 4 on the team'
             },
             {
                 src: '/jyaba-team-2026.png',
                 alt: 'Jyaba team of fifteen in 2026',
-                caption: 'Jyaba today — 15 people strong in 2026'
+                caption: 'Jyaba today — 15 people strong in 2026 and growing'
             }
         ],
         actions: [
