@@ -1,45 +1,46 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectPreview from '../../components/ProjectPreview.astro';
-import { sortItemsByDateDesc } from '../../utils/data-utils';
+import TalkPreview from '../../components/TalkPreview.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+function sortByDateDesc(a: CollectionEntry<'talks'>, b: CollectionEntry<'talks'>) {
+    return b.data.date.getTime() - a.data.date.getTime();
+}
 
 export async function getStaticPaths() {
-    const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-    const projectCount = projects.length;
-    return projects.map((project, index) => ({
-        params: { slug: project.slug },
+    const talks = (await getCollection('talks')).sort(sortByDateDesc);
+    const talkCount = talks.length;
+    return talks.map((talk, index) => ({
+        params: { slug: talk.slug },
         props: {
-            project,
-            prevProject: index + 1 !== projectCount ? projects[index + 1] : null,
-            nextProject: index !== 0 ? projects[index - 1] : null
+            talk,
+            prevTalk: index + 1 !== talkCount ? talks[index + 1] : null,
+            nextTalk: index !== 0 ? talks[index - 1] : null
         }
     }));
 }
 
-type Props = { project: CollectionEntry<'projects'>; prevProject: CollectionEntry<'projects'>; nextProject: CollectionEntry<'projects'> };
+type Props = { talk: CollectionEntry<'talks'>; prevTalk: CollectionEntry<'talks'> | null; nextTalk: CollectionEntry<'talks'> | null };
 
-const { project, prevProject, nextProject } = Astro.props;
-const { title, description, seo } = project.data;
-const { Content } = await project.render();
+const { talk, prevTalk, nextTalk } = Astro.props;
+const { title, event, date, link, image, location, seo } = talk.data;
+const { Content } = await talk.render();
 ---
 
-<BaseLayout title={seo?.title ?? title} description={seo?.description ?? description} image={seo?.image} pageType="article" showHeader={false}>
+<BaseLayout title={seo?.title ?? title} description={seo?.description} image={seo?.image ?? image} pageType="article" showHeader={false}>
     <article class="mb-16 sm:mb-24">
         <header class="mb-8">
+            <div class="mb-2 font-serif text-sm italic">{event}</div>
             <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{title}</h1>
-        </header>
-        <div class="max-w-none prose prose-dante sm:prose-lg">
-            <Content />
-        </div>
-    </article>
-    {
-        (prevProject || nextProject) && (
-            <div class="my-16 sm:my-24">
-                <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">View Next</h2>
-                {nextProject && <ProjectPreview project={nextProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
-                {prevProject && <ProjectPreview project={prevProject} class="mb-10 sm:mb-12" headingLevel="h3" />}
+            <div class="mt-3 text-sm leading-normal opacity-70">
+                <FormattedDate date={date} />
+                {location && <span> · {location}</span>}
             </div>
-        )
-    }
-</BaseLayout>
+        </header>
+        {
+            image && (
+                <div class="mb-8 aspect-video w-full overflow-hidden border border-main">
+                    <img src={image.src} alt={image.alt ?? title} class="h-full w-full object-cover" />
+                </div>
+       

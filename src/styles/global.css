@@ -4,17 +4,37 @@
 
 @layer base {
     :root {
-        --color-text-main: 23 23 23; /* #171717 */
-        --color-bg-main: 242 241 236; /* #F2F1EC */
-        --color-bg-muted: 234 233 225; /* #EAE9E1 */
-        --color-border-main: 23 23 23; /* #171717 */
+        --color-text-main: 15 23 42; /* #0F172A slate-900 */
+        --color-bg-main: 248 250 252; /* #F8FAFC slate-50 */
+        --color-bg-muted: 241 245 249; /* #F1F5F9 slate-100 */
+        --color-border-main: 15 23 42; /* #0F172A slate-900 */
+        --color-accent: 37 99 235; /* #2563EB blue-600 */
+        --color-accent-foreground: 255 255 255; /* #FFFFFF */
     }
     html.dark {
-        --color-text-main: 242 241 236; /* #F2F1EC */
-        --color-bg-main: 23 23 23; /* #171717 */
-        --color-bg-muted: 36 36 36; /* #242424 */
-        --color-border-main: 242 241 236; /* #F2F1EC */
+        --color-text-main: 226 232 240; /* #E2E8F0 slate-200 */
+        --color-bg-main: 15 23 42; /* #0F172A slate-900 */
+        --color-bg-muted: 30 41 59; /* #1E293B slate-800 */
+        --color-border-main: 226 232 240; /* #E2E8F0 slate-200 */
+        --color-accent: 96 165 250; /* #60A5FA blue-400 */
+        --color-accent-foreground: 15 23 42; /* #0F172A slate-900 */
     }
+
+    /* Cream (previous default) */
+    /*
+    :root {
+        --color-text-main: 23 23 23;
+        --color-bg-main: 242 241 236;
+        --color-bg-muted: 234 233 225;
+        --color-border-main: 23 23 23;
+    }
+    html.dark {
+        --color-text-main: 242 241 236;
+        --color-bg-main: 23 23 23;
+        --color-bg-muted: 36 36 36;
+        --color-border-main: 242 241 236;
+    }
+    */
 
     /* Cyan */
     /*
