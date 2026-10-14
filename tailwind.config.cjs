@@ -19,10 +19,12 @@ module.exports = {
             },
             backgroundColor: {
                 main: 'rgb(var(--color-bg-main) / <alpha-value>)',
-                muted: 'rgb(var(--color-bg-muted) / <alpha-value>)'
+                muted: 'rgb(var(--color-bg-muted) / <alpha-value>)',
+                accent: 'rgb(var(--color-accent) / <alpha-value>)'
             },
             borderColor: {
-                main: 'rgb(var(--color-border-main) / <alpha-value>)'
+                main: 'rgb(var(--color-border-main) / <alpha-value>)',
+                accent: 'rgb(var(--color-accent) / <alpha-value>)'
             },
             typography: (theme) => ({
                 dante: {

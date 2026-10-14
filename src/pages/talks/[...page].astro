@@ -1,0 +1,72 @@
+---
+import type { GetStaticPathsOptions, Page } from 'astro';
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Pagination from '../../components/Pagination.astro';
+import TalkPreview from '../../components/TalkPreview.astro';
+import siteConfig from '../../data/site-config';
+import { sortTalksByDateAsc, sortTalksByDateDesc } from '../../utils/data-utils';
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const allTalks = await getCollection('talks');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const pastTalks = allTalks.filter((talk) => talk.data.date.getTime() < today.getTime()).sort(sortTalksByDateDesc);
+
+    return paginate(pastTalks, { pageSize: siteConfig.talksPerPage || 8 });
+}
+
+type Props = { page: Page<CollectionEntry<'talks'>> };
+
+const { page } = Astro.props;
+const pastTalks = page.data;
+
+const allTalks = await getCollection('talks');
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const upcomingTalks = allTalks.filter((talk) => talk.data.date.getTime() >= today.getTime()).sort(sortTalksByDateAsc);
+---
+
+<BaseLayout
+    title="Speaking"
+    description="My past and upcoming speaking sessions at community events and conferences"
+    image={{ src: '/dante-preview.jpg', alt: 'The preview of the site' }}
+    showHeader={false}
+>
+    <h1 class="mb-12 text-2xl leading-tight font-serif font-medium sm:mb-16 sm:text-4xl">Speaking</h1>
+
+    {
+        page.currentPage === 1 && (
+            <div class="mb-16 sm:mb-24">
+                <h2 class="mb-8 text-xl font-serif font-medium sm:mb-10 sm:text-2xl">Upcoming Talks</h2>
+                {upcomingTalks.length > 0 ? (
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        {upcomingTalks.map((talk) => (
+                            <TalkPreview talk={talk} />
+                        ))}
+                    </div>
+                ) : (
+                    <p class="text-sm opacity-70">No upcoming talks scheduled right now — check back soon.</p>
+                )}
+            </div>
+        )
+    }
+
+    <div class="mb-16 sm:mb-24">
+        <h2 class="mb-8 text-xl font-serif font-medium sm:mb-10 sm:text-2xl">Past Talks</h2>
+        {
+            pastTalks.length > 0 ? (
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {pastTalks.map((talk) => (
+                        <TalkPreview talk={talk} />
+                    ))}
+                </div>
+            ) : (
+                <p class="text-sm opacity-70">No past talks yet.</p>
+            )
+        }
+    </div>
+
+    <Pagination page={page} class="my-16 sm:my-24" />
+</BaseLayout>

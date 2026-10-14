@@ -8,12 +8,14 @@ import PostCard from '../components/PostCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import siteConfig from '../data/site-config';
-import { sortItemsByDateDesc } from '../utils/data-utils';
+import { sortItemsByDateDesc, sortTalksByDateAsc, sortTalksByDateDesc } from '../utils/data-utils';
 
+// Blog posts
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 const latestPosts = (featuredPosts.length > 0 ? featuredPosts : posts).slice(0, 3);
 
+// Projects
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 const homeProjects = (featuredProjects.length > 0 ? featuredProjects : projects).slice(0, 2);

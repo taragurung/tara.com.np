@@ -248,6 +248,36 @@ declare module 'astro:content' {
   data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
+"talks": {
+"aws-workshop.md": {
+	id: "aws-workshop.md";
+  slug: "aws-workshop";
+  body: string;
+  collection: "talks";
+  data: InferEntrySchema<"talks">
+} & { render(): Render[".md"] };
+"community-to-devops-data-engineering-devops-connect.md": {
+	id: "community-to-devops-data-engineering-devops-connect.md";
+  slug: "community-to-devops-data-engineering-devops-connect";
+  body: string;
+  collection: "talks";
+  data: InferEntrySchema<"talks">
+} & { render(): Render[".md"] };
+"devops-for-beginners-aws-user-group-wit-nepal.md": {
+	id: "devops-for-beginners-aws-user-group-wit-nepal.md";
+  slug: "devops-for-beginners-aws-user-group-wit-nepal";
+  body: string;
+  collection: "talks";
+  data: InferEntrySchema<"talks">
+} & { render(): Render[".md"] };
+"devops-for-cultural-shift-wordcamp-pokhara.md": {
+	id: "devops-for-cultural-shift-wordcamp-pokhara.md";
+  slug: "devops-for-cultural-shift-wordcamp-pokhara";
+  body: string;
+  collection: "talks";
+  data: InferEntrySchema<"talks">
+} & { render(): Render[".md"] };
+};
 
 	};
 
@@ -257,5 +287,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }

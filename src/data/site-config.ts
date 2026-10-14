@@ -15,6 +15,7 @@ export type Hero = {
     highlight?: string;
     text?: string;
     image?: Image;
+    images?: Image[];
     actions?: Link[];
     stats?: { value: string; label: string }[];
 };
@@ -55,6 +56,7 @@ export type SiteConfig = {
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
+    talksPerPage?: number;
 };
 
 const siteConfig: SiteConfig = {
@@ -116,6 +118,18 @@ const siteConfig: SiteConfig = {
             src: '/tara-gurung.png',
             alt: 'Tara Gurung, co-founder of Jyaba, speaking at an event'
         },
+        images: [
+            {
+                src: '/jyaba-team-early-days.png',
+                alt: 'Jyaba founding team of four in the early days',
+                caption: 'The early days — started with 4 on the team'
+            },
+            {
+                src: '/jyaba-team-2026.png',
+                alt: 'Jyaba team of fifteen in 2026',
+                caption: 'Jyaba today — 15 people strong in 2026 and growing'
+            }
+        ],
         actions: [
             {
                 text: 'Explore Jyaba',
@@ -167,13 +181,9 @@ const siteConfig: SiteConfig = {
             }
         ]
     },
-    subscribe: {
-        title: 'Subscribe to Tara Gurung Newsletter',
-        text: 'All the latest posts directly in your inbox.',
-        formUrl: '#'
-    },
     postsPerPage: 8,
-    projectsPerPage: 8
+    projectsPerPage: 8,
+    talksPerPage: 8
 };
 
 export default siteConfig;
