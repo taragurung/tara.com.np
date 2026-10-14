@@ -1,5 +1,4 @@
 ---
-import { marked } from 'marked';
 import Button from './Button.astro';
 import siteConfig from '../data/site-config';
 
@@ -7,35 +6,68 @@ const hero = siteConfig.hero;
 ---
 
 {
-    (hero?.title || hero?.image?.src || hero?.text || (hero?.actions && hero.actions.length > 0)) && (
-        <section class="w-full flex flex-col gap-8 mb-16 sm:mb-24">
-            {hero.title && <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">{hero.title}</h1>}
-            {hero.image?.src && (
-                <figure>
-                    <img class="w-half" src={hero.image.src} loading="lazy" decoding="async" alt={hero.image.alt || ''} />
-                    {hero.image.caption && <figcaption class="mt-1.5 text-xs sm:text-sm">{hero.image.caption}</figcaption>}
-                </figure>
-            )}
-            {hero.text && <div class="max-w-none prose prose-dante sm:prose-lg" set:html={marked.parse(hero.text)} />}
-            {hero.images && hero.images.length > 0 && (
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    {hero.images.map((img) => (
-                        <figure>
-                            <div class="aspect-video w-full overflow-hidden rounded-xl border border-main/10">
-                                <img class="h-full w-full object-cover" src={img.src} loading="lazy" decoding="async" alt={img.alt || ''} />
+    hero && (
+        <section class="relative py-16 sm:py-24">
+            <div class="grid items-center gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16">
+                <div>
+                    {hero.eyebrow && <p class="mb-5 font-mono text-sm text-accent">{hero.eyebrow}</p>}
+                    {hero.title && (
+                        <h1 class="text-4xl leading-tight font-extrabold tracking-tight sm:text-5xl sm:leading-[1.1] lg:text-6xl">
+                            {hero.title}{' '}{hero.highlight &&<span class="text-accent">{hero.highlight}</span>}
+                        </h1>
+                    )}
+                    {hero.text && <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">{hero.text}</p>}
+                    {hero.actions && hero.actions.length > 0 && (
+                        <div class="mt-8 flex flex-wrap gap-3">
+                            {hero.actions.map((action, index) => (
+                                <Button
+                                    href={action.href}
+                                    variant={index === 0 ? 'primary' : 'secondary'}
+                                    {...(action.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                >
+                                    {action.text}
+                                </Button>
+                            ))}
+                        </div>
+                    )}
+                    {hero.stats && hero.stats.length > 0 && (
+                        <dl class="mt-12 grid grid-cols-3 gap-6 max-w-xl">
+                            {hero.stats.map((stat) => (
+                                <div>
+                                    <dt class="sr-only">{stat.label}</dt>
+                                    <dd class="text-xl font-bold leading-tight tracking-tight sm:text-2xl">{stat.value}</dd>
+                                    <dd class="mt-1 text-xs text-muted">{stat.label}</dd>
+                                </div>
+                            ))}
+                        </dl>
+                    )}
+                </div>
+                {hero.image?.src && (
+                    <div class="relative mx-auto w-full max-w-sm">
+                        <img
+                            class="relative w-full aspect-square object-cover rounded-2xl border border-main"
+                            src={hero.image.src}
+                            decoding="async"
+                            alt={hero.image.alt || ''}
+                        />
+                        <div class="absolute -bottom-6 -left-4 w-64 rounded-xl border border-main bg-muted p-4 font-mono text-xs shadow-lg sm:-left-10">
+                            <div class="mb-3 flex gap-1.5" aria-hidden="true">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-500/80" />
                             </div>
-                            {img.caption && <figcaption class="mt-2 text-xs opacity-70 sm:text-sm">{img.caption}</figcaption>}
-                        </figure>
-                    ))}
-                </div>
-            )}
-            {hero.actions && hero.actions.length > 0 && (
-                <div class="flex flex-wrap gap-4">
-                    {hero.actions.map((action) => (
-                        <Button href={action.href}>{action.text}</Button>
-                    ))}
-                </div>
-            )}
+                            <p>
+                                <span class="text-accent">$</span> jyaba pull --dataset prices
+                            </p>
+                            <p class="mt-1 text-muted">→ format: parquet</p>
+                            <p class="text-muted">→ deliver: s3://your-bucket</p>
+                            <p class="mt-1">
+                                <span class="text-accent">✓</span> fresh data, every day
+                            </p>
+                        </div>
+                    </div>
+                )}
+            </div>
         </section>
     )
 }

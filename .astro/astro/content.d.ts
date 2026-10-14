@@ -152,20 +152,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"aws-terraform-networking-resources-setup.md": {
-	id: "aws-terraform-networking-resources-setup.md";
-  slug: "aws-terraform-networking-resources-setup";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"creating-aws-network-component-nat-part2.md": {
-	id: "creating-aws-network-component-nat-part2.md";
-  slug: "creating-aws-network-component-nat-part2";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
 "devops-roadmap-for-beginners-my-experience.md": {
 	id: "devops-roadmap-for-beginners-my-experience.md";
   slug: "devops-roadmap-for-beginners-my-experience";

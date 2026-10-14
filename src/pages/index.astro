@@ -1,108 +1,52 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
+import ContactCta from '../components/ContactCta.astro';
 import Hero from '../components/Hero.astro';
+import Highlights from '../components/Highlights.astro';
 import PostCard from '../components/PostCard.astro';
-import ProjectPreview from '../components/ProjectPreview.astro';
-import TalkPreview from '../components/TalkPreview.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import SectionHeading from '../components/SectionHeading.astro';
 import siteConfig from '../data/site-config';
 import { sortItemsByDateDesc, sortTalksByDateAsc, sortTalksByDateDesc } from '../utils/data-utils';
 
 // Blog posts
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
-const latestPosts = posts.slice(0, 4);
+const latestPosts = (featuredPosts.length > 0 ? featuredPosts : posts).slice(0, 3);
 
 // Projects
 const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
 const featuredProjects = projects.filter(({ data }) => data.isFeatured);
-
-// Speaking / talks
-const allTalks = await getCollection('talks');
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-const upcomingTalks = allTalks.filter((talk) => talk.data.date.getTime() >= today.getTime()).sort(sortTalksByDateAsc);
-const pastTalks = allTalks
-    .filter((talk) => talk.data.date.getTime() < today.getTime())
-    .sort(sortTalksByDateDesc)
-    .slice(0, 4);
+const homeProjects = (featuredProjects.length > 0 ? featuredProjects : projects).slice(0, 2);
 ---
 
-<BaseLayout description={siteConfig.description} image={siteConfig.image}>
+<BaseLayout description={siteConfig.description} image={siteConfig.image} showHeader={false} wide>
     <Hero />
+    <Highlights />
     {
-        featuredProjects?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif font-medium sm:mb-16 sm:text-2xl">Projects</h2>
-                {featuredProjects.map((project) => (
-                    <ProjectPreview project={project} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/projects">View All Projects</Button>
-                </div>
-            </div>
-        )
-    }
-    {
-        featuredPosts?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif font-medium sm:mb-16 sm:text-2xl">Writing</h2>
-                {featuredPosts.map((post) => (
-                    <PostCard post={post} class="mb-10 sm:mb-12" headingLevel="h3" />
-                ))}
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">View All Posts</Button>
-                </div>
-            </div>
-        )
-    }
-
-    <!-- Upcoming Talks -->
-    {
-        upcomingTalks.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif font-medium sm:mb-16 sm:text-2xl">Upcoming Talks</h2>
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {upcomingTalks.map((talk) => (
-                        <TalkPreview talk={talk} />
-                    ))}
-                </div>
-            </div>
-        )
-    }
-
-    <!-- Past Talks -->
-    {
-        pastTalks.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif font-medium sm:mb-16 sm:text-2xl">Past Talks</h2>
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    {pastTalks.map((talk) => (
-                        <TalkPreview talk={talk} />
-                    ))}
-                </div>
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/talks">View All Talks</Button>
-                </div>
-            </div>
-        )
-    }
-
-    <!-- Latest Blog Posts -->
-    {
-        latestPosts?.length > 0 && (
-            <div class="mb-16 sm:mb-24">
-                <h2 class="mb-12 text-xl font-serif font-medium sm:mb-16 sm:text-2xl">Latest from the Blog</h2>
-                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        latestPosts.length > 0 && (
+            <section class="py-16 sm:py-24">
+                <SectionHeading eyebrow="// writing" title="Latest from the blog" link={{ text: 'View all posts', href: '/blog' }} />
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {latestPosts.map((post) => (
                         <PostCard post={post} />
                     ))}
                 </div>
-                <div class="mt-12 sm:mt-16">
-                    <Button href="/blog">View All Posts</Button>
-                </div>
-            </div>
+            </section>
         )
     }
+    {
+        homeProjects.length > 0 && (
+            <section class="py-16 sm:py-24">
+                <SectionHeading eyebrow="// side projects" title="Projects" link={{ text: 'View all projects', href: '/projects' }} />
+                <div class="grid gap-6 lg:grid-cols-2">
+                    {homeProjects.map((project) => (
+                        <ProjectCard project={project} />
+                    ))}
+                </div>
+            </section>
+        )
+    }
+    <ContactCta />
 </BaseLayout>

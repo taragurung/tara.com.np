@@ -1,0 +1,33 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
+
+type Props = { project: CollectionEntry<'projects'> };
+
+const { project } = Astro.props;
+const { title, description, seo } = project.data;
+
+const imageSrc = seo?.image?.src;
+const hasImage = !!imageSrc && fs.existsSync(path.join(process.cwd(), 'public', imageSrc));
+---
+
+<a
+    href={`/projects/${project.slug}/`}
+    class="group grid overflow-hidden rounded-2xl border border-main bg-muted/50 transition hover:-translate-y-1 hover:border-accent/50 hover:bg-muted sm:grid-cols-[2fr_3fr]"
+>
+    <div class="relative aspect-[16/9] overflow-hidden border-b border-main sm:aspect-auto sm:border-b-0 sm:border-r">
+        {
+            hasImage ? (
+                <img src={imageSrc} alt={seo?.image?.alt || ''} loading="lazy" decoding="async" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            ) : (
+                <div class="h-full w-full bg-muted" />
+            )
+        }
+    </div>
+    <div class="flex flex-col p-6">
+        <h3 class="text-lg font-semibold leading-snug tracking-tight transition group-hover:text-accent">{title}</h3>
+        {description && <p class="mt-2 line-clamp-4 text-sm leading-relaxed text-muted">{description}</p>}
+        <span class="mt-auto pt-5 text-sm font-semibold text-accent">View project →</span>
+    </div>
+</a>

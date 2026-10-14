@@ -6,13 +6,16 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: ['Inter', ...defaultTheme.fontFamily.sans],
-            serif: ['Newsreader', ...defaultTheme.fontFamily.serif]
+            serif: ['Newsreader', ...defaultTheme.fontFamily.serif],
+            mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono]
         },
         extend: {
+            colors: {
+                accent: 'rgb(var(--color-accent) / <alpha-value>)'
+            },
             textColor: {
                 main: 'rgb(var(--color-text-main) / <alpha-value>)',
-                accent: 'rgb(var(--color-accent) / <alpha-value>)',
-                'accent-foreground': 'rgb(var(--color-accent-foreground) / <alpha-value>)'
+                muted: 'rgb(var(--color-text-muted) / <alpha-value>)'
             },
             backgroundColor: {
                 main: 'rgb(var(--color-bg-main) / <alpha-value>)',
@@ -26,20 +29,20 @@ module.exports = {
             typography: (theme) => ({
                 dante: {
                     css: {
-                        '--tw-prose-body': theme('textColor.main / 100%'),
+                        '--tw-prose-body': theme('textColor.main / 90%'),
                         '--tw-prose-headings': theme('textColor.main / 100%'),
                         '--tw-prose-lead': theme('textColor.main / 100%'),
-                        '--tw-prose-links': theme('textColor.accent / 100%'),
+                        '--tw-prose-links': theme('colors.accent / 100%'),
                         '--tw-prose-bold': theme('textColor.main / 100%'),
-                        '--tw-prose-counters': theme('textColor.main / 100%'),
-                        '--tw-prose-bullets': theme('textColor.main / 100%'),
+                        '--tw-prose-counters': theme('textColor.muted / 100%'),
+                        '--tw-prose-bullets': theme('colors.accent / 100%'),
                         '--tw-prose-hr': theme('borderColor.main / 100%'),
                         '--tw-prose-quotes': theme('textColor.main / 100%'),
-                        '--tw-prose-quote-borders': theme('borderColor.main / 100%'),
-                        '--tw-prose-captions': theme('textColor.main / 100%'),
-                        '--tw-prose-code': theme('textColor.main / 100%'),
-                        '--tw-prose-pre-code': theme('colors.zinc.100'),
-                        '--tw-prose-pre-bg': theme('colors.zinc.800'),
+                        '--tw-prose-quote-borders': theme('colors.accent / 100%'),
+                        '--tw-prose-captions': theme('textColor.muted / 100%'),
+                        '--tw-prose-code': theme('colors.accent / 100%'),
+                        '--tw-prose-pre-code': theme('colors.slate.200'),
+                        '--tw-prose-pre-bg': theme('colors.slate.900'),
                         '--tw-prose-th-borders': theme('borderColor.main / 100%'),
                         '--tw-prose-td-borders': theme('borderColor.main / 100%')
                     }
@@ -47,39 +50,28 @@ module.exports = {
                 DEFAULT: {
                     css: {
                         a: {
-                            color: theme('textColor.accent / 100%'),
                             fontWeight: '500',
                             textDecoration: 'underline',
-                            textDecorationStyle: 'solid',
                             textDecorationThickness: '1px',
-                            textUnderlineOffset: '2px',
+                            textUnderlineOffset: '3px',
                             '&:hover': {
                                 textDecorationThickness: '2px'
                             }
                         },
                         'h1,h2,h3,h4,h5,h6': {
-                            fontFamily: theme('fontFamily.serif'),
-                            fontWeight: 500
+                            fontWeight: 700,
+                            letterSpacing: '-0.015em'
                         },
+                        pre: {
+                            border: '1px solid rgb(var(--color-border-main))',
+                            borderRadius: theme('borderRadius.xl')
+                        },
+                        'code::before': { content: 'none' },
+                        'code::after': { content: 'none' },
                         blockquote: {
-                            border: 0,
-                            fontFamily: theme('fontFamily.serif'),
-                            fontSize: '1.3125em',
                             fontStyle: 'italic',
                             fontWeight: 'normal',
-                            lineHeight: 1.4,
-                            paddingLeft: 0,
-                            '@media (min-width: theme("screens.sm"))': {
-                                fontSize: '1.66667em',
-                                lineHeight: 1.3
-                            }
-                        }
-                    }
-                },
-                lg: {
-                    css: {
-                        blockquote: {
-                            paddingLeft: 0
+                            borderLeftWidth: '3px'
                         }
                     }
                 }

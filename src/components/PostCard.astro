@@ -1,40 +1,48 @@
 ---
 import { type CollectionEntry } from 'astro:content';
-import ArrowRight from '../icons/ArrowRight.astro';
+import fs from 'node:fs';
+import path from 'node:path';
 import FormattedDate from './FormattedDate.astro';
 
-type Props = { post: CollectionEntry<'blog'>; class?: string; headingLevel?: 'h2' | 'h3' };
+type Props = { post: CollectionEntry<'blog'> };
 
-const { post, class: className, headingLevel = 'h3' } = Astro.props;
-const { title, publishDate, excerpt, seo, tags } = post.data;
-const image = seo?.image;
-const TitleTag = headingLevel;
+const { post } = Astro.props;
+const { title, publishDate, excerpt, tags = [], seo } = post.data;
+
+// Some posts reference cover images that don't exist in /public, fall back to a plain block for those
+const imageSrc = seo?.image?.src;
+const hasImage = !!imageSrc && fs.existsSync(path.join(process.cwd(), 'public', imageSrc));
 ---
 
 <a
     href={`/blog/${post.slug}/`}
-    class:list={[
-        'group flex flex-col overflow-hidden rounded-xl border border-main/10 bg-muted/40 shadow-sm transition-all hover:border-accent/30 hover:shadow-md',
-        className
-    ]}
+    class="group flex flex-col overflow-hidden rounded-2xl border border-main bg-muted/50 transition hover:-translate-y-1 hover:border-accent/50 hover:bg-muted"
 >
-    {
-        image && (
-            <div class="aspect-video w-full overflow-hidden">
-                <img src={image.src} alt={image.alt ?? title} class="h-full w-full object-cover" loading="lazy" />
-            </div>
-        )
-    }
-    <div class="flex grow flex-col p-5 sm:p-6">
-        {tags && tags.length > 0 && <div class="mb-2 text-xs font-semibold tracking-wide text-accent uppercase">{tags[0]}</div>}
-        <TitleTag class="text-lg leading-tight font-serif font-medium transition group-hover:text-accent sm:text-xl">{title}</TitleTag>
-        <div class="mt-1 text-sm leading-normal opacity-70">
+    <div class="relative aspect-[16/9] overflow-hidden border-b border-main">
+        {
+            hasImage ? (
+                <img src={imageSrc} alt={seo?.image?.alt || ''} loading="lazy" decoding="async" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+            ) : (
+                <div class="flex h-full w-full items-center justify-center bg-muted">
+                    <span class="font-mono text-sm text-accent">#{tags[0] ?? 'devops'}</span>
+                </div>
+            )
+        }
+    </div>
+    <div class="flex grow flex-col p-6">
+        {
+            tags.length > 0 && (
+                <div class="mb-3 flex flex-wrap gap-2">
+                    {tags.slice(0, 2).map((tag) => (
+                        <span class="rounded-md bg-accent/10 px-2 py-0.5 font-mono text-xs text-accent">{tag}</span>
+                    ))}
+                </div>
+            )
+        }
+        <h3 class="text-lg font-semibold leading-snug tracking-tight transition group-hover:text-accent">{title}</h3>
+        {excerpt && <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{excerpt}</p>}
+        <div class="mt-auto pt-5 text-xs text-muted">
             <FormattedDate date={publishDate} />
-        </div>
-        {excerpt && <p class="mt-3 line-clamp-3 text-sm leading-normal opacity-80">{excerpt}</p>}
-        <div class="mt-4 grow" />
-        <div class="inline-flex items-center gap-1 self-start text-sm font-medium text-accent">
-            Read Post <ArrowRight class="h-4 w-4 fill-current transition group-hover:translate-x-0.5" />
         </div>
     </div>
 </a>

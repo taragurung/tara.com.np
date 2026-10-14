@@ -5,42 +5,43 @@ const socialLinks = siteConfig.socialLinks || [];
 const navLinks = siteConfig.footerNavLinks || [];
 ---
 
-<footer class="w-full max-w-5xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14">
-    {
-        navLinks.length > 0 && (
-            <div class="mb-4 flex flex-wrap gap-x-6 gap-y-1">
-                {navLinks.map((link) => (
-                    <a class="font-serif hover:underline hover:underline-offset-2" href={link.href}>
-                        {link.text}
-                    </a>
-                ))}
-            </div>
-        )
-    }
-    <div
-        class:list={[
-            'pt-6 flex flex-col gap-4 border-t border-main',
-            { 'sm:flex-row-reverse sm:justify-between sm:items-center': socialLinks.length > 0 }
-        ]}
-    >
-        {
-            socialLinks.length > 0 && (
-                <div class="flex flex-wrap gap-x-4 gap-y-1">
-                    {socialLinks.map((link) => (
-                        <a
-                            class="inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2"
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferer"
-                        >
-                            {link.text}
-                        </a>
-                    ))}
-                </div>
-            )
-        }
-        <p class="text-sm">
-            &copy; {new Date().getFullYear()}&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">{siteConfig.title}</a>. All rights reserved.
-        </p>
+<footer class="w-full max-w-6xl mx-auto mt-24 pt-10 pb-10 border-t border-main sm:mt-32 sm:pb-14">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+            <a href="/" class="inline-flex items-center gap-2 font-mono font-semibold">
+                <span class="text-accent">&gt;_</span>
+                {siteConfig.title.toLowerCase().replace(/\s+/g, '')}
+            </a>
+            {siteConfig.subtitle && <p class="mt-2 text-sm text-muted">{siteConfig.subtitle}</p>}
+        </div>
+        <div class="flex flex-wrap gap-x-10 gap-y-6">
+            {
+                navLinks.length > 0 && (
+                    <div class="flex flex-col gap-2">
+                        <span class="font-mono text-xs uppercase tracking-wider text-muted">Site</span>
+                        {navLinks.map((link) => (
+                            <a class="text-sm transition hover:text-accent" href={link.href}>
+                                {link.text}
+                            </a>
+                        ))}
+                    </div>
+                )
+            }
+            {
+                socialLinks.length > 0 && (
+                    <div class="flex flex-col gap-2">
+                        <span class="font-mono text-xs uppercase tracking-wider text-muted">Connect</span>
+                        {socialLinks.map((link) => (
+                            <a class="text-sm transition hover:text-accent" href={link.href} target="_blank" rel="noopener noreferrer">
+                                {link.text}
+                            </a>
+                        ))}
+                    </div>
+                )
+            }
+        </div>
     </div>
+    <p class="mt-10 text-xs text-muted">
+        &copy; {new Date().getFullYear()}&nbsp;<a class="hover:text-accent" href="/">{siteConfig.title}</a>. All rights reserved.
+    </p>
 </footer>
