@@ -10,9 +10,27 @@ export type Link = {
 };
 
 export type Hero = {
+    eyebrow?: string;
     title?: string;
+    highlight?: string;
     text?: string;
     image?: Image;
+    actions?: Link[];
+    stats?: { value: string; label: string }[];
+};
+
+export type Highlight = {
+    label: string;
+    title: string;
+    text: string;
+    image?: Image;
+    link?: Link;
+    note?: string;
+};
+
+export type Cta = {
+    title: string;
+    text?: string;
     actions?: Link[];
 };
 
@@ -32,6 +50,8 @@ export type SiteConfig = {
     footerNavLinks?: Link[];
     socialLinks?: Link[];
     hero?: Hero;
+    highlights?: Highlight[];
+    cta?: Cta;
     subscribe?: Subscribe;
     postsPerPage?: number;
     projectsPerPage?: number;
@@ -39,11 +59,11 @@ export type SiteConfig = {
 
 const siteConfig: SiteConfig = {
     title: 'Tara Gurung',
-    subtitle: 'Software Engineer | DevOps Engineer ',
-    description: 'Experienced Software Engineer with 12 years in diverse technology companies. DevOps Engineer based in Nepal.',
+    subtitle: 'Co-founder, Jyaba · Data Engineering · Pokhara, Nepal',
+    description: 'Tara Gurung, co-founder of Jyaba, a data engineering company in Pokhara, Nepal. 12+ years in software and DevOps, TEDx speaker and tech community builder.',
     image: {
-        src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
-        alt: 'DevOps Engineer in Pokhara, Nepal'
+        src: '/tara-gurung.png',
+        alt: 'Tara Gurung, co-founder of Jyaba, Pokhara, Nepal'
     },
     headerNavLinks: [
         {
@@ -75,21 +95,75 @@ const siteConfig: SiteConfig = {
     ],
     socialLinks: [
         {
-            text: 'Linkedin',
+            text: 'LinkedIn',
             href: 'https://linkedin.com/in/taragurung/'
         },
+        {
+            text: 'Jyaba',
+            href: 'https://jyaba.com'
+        },
+        {
+            text: 'Developers Community Pokhara',
+            href: 'https://www.linkedin.com/company/developers-community-pokhara/'
+        }
     ],
     hero: {
-        title: 'Hi & Welcome to DevOps world!',
-        text: "I'm Tara Gurung, I do DevOps for my customers to bring change in their software engineering process. I am driven by a passion for automation, scalability, and seamless collaboration. My approach combines strategic intuition, thoughtful research, and a focus on efficiency to build resilient infrastructure and optimize workflows. I have a deep appreciation for cutting-edge technologies, robust software design, and the transformative power of DevOps culture. Connect with me on <a href='https://linkedin.com/in/taragurung'>Linkedin</a>.",
+        eyebrow: '// Co-founder, Jyaba · Pokhara, Nepal',
+        title: "Turning the web's product data into",
+        highlight: 'decisions.',
+        text: "I'm Tara Gurung, co-founder of Jyaba, a data engineering company that collects prices, catalogs and reviews from online stores and delivers clean, ready-to-use datasets. I bring 12+ years of building and running software (much of it as a DevOps engineer), and I put just as much energy into growing the tech community in Pokhara.",
         image: {
-            src: '/tara-gurung-senior-devops-engineer-nepal.PNG',
-            alt: 'Tara Gurung Profile Picture while leading a meetup session in Pokhara'
+            src: '/tara-gurung.png',
+            alt: 'Tara Gurung, co-founder of Jyaba, speaking at an event'
         },
+        actions: [
+            {
+                text: 'Explore Jyaba',
+                href: 'https://jyaba.com'
+            },
+            {
+                text: 'Get in Touch',
+                href: '/contact'
+            }
+        ],
+        stats: [
+            { value: '12+', label: 'Years in tech' },
+            { value: 'TEDx', label: 'Chipledhunga speaker' },
+            { value: 'Community builder', label: 'Developers Community Pokhara' }
+        ]
+    },
+    highlights: [
+        {
+            label: 'Speaking',
+            title: 'TEDx Chipledhunga',
+            text: 'I shared my journey and ideas on the TEDx Chipledhunga stage. The talk video will be published soon.',
+            note: 'Video coming soon'
+        },
+        {
+            label: 'Community',
+            title: 'Developers Community Pokhara',
+            text: 'Building a tech community in Pokhara where developers learn, share and grow together through meetups and events.',
+            image: {
+                src: '/developers-community-in-pokhara.jpg',
+                alt: 'Developers Community Pokhara meetup'
+            },
+            link: {
+                text: 'Follow the community',
+                href: 'https://www.linkedin.com/company/developers-community-pokhara/'
+            }
+        }
+    ],
+    cta: {
+        title: 'Need reliable product data from the web?',
+        text: "Whether it's daily price monitoring or a one-off catalog dataset, Jyaba handles the scraping so your team can focus on the insights. Happy to chat about data engineering, DevOps or the Pokhara tech scene too.",
         actions: [
             {
                 text: 'Get in Touch',
                 href: '/contact'
+            },
+            {
+                text: 'Visit jyaba.com',
+                href: 'https://jyaba.com'
             }
         ]
     },
