@@ -22,7 +22,19 @@ Determined to change that, I connected on LinkedIn with someone(Surendra Tamang)
 3. Make it a network platform for tech enthusiast.
 
 ## Event updates:
-- Successfully conducted 17th meetups and continuing
+- Successfully conducted 50+ meetups and still going strong
 - Initiated with 2 people now we have 7 dedicated people in the team to volunteer and make the event happen evey month.
 
 
+## Moments from our meetups
+
+<figure>
+  <img src="/dcp-pokhara-meetup-group-photo.jpg" alt="Large group photo of attendees at a Developers Community Pokhara meetup in a hotel hall" width="1600" height="1200" loading="lazy" class="w-full rounded-lg" />
+  <figcaption>One of our biggest gatherings, with developers and tech enthusiasts from across Pokhara.</figcaption>
+</figure>
+
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-3 not-prose">
+  <img src="/dcp-pokhara-meetup-talk.jpg" alt="A speaker presenting GnuCash, free open-source accounting software, at a community meetup" width="2048" height="1152" loading="lazy" class="h-56 w-full rounded-lg object-cover" />
+  <img src="/dcp-pokhara-outdoor-meetup.jpg" alt="Community members posing beside the Developers Community Pokhara banner at an outdoor meetup" width="2048" height="1536" loading="lazy" class="h-56 w-full rounded-lg object-cover" />
+  <img src="/dcp-pokhara-speaker-token-of-appreciation.jpg" alt="A speaker receiving a token of appreciation from the Developers Community Pokhara team" width="960" height="1280" loading="lazy" class="h-56 w-full rounded-lg object-cover object-top" />
+</div>
